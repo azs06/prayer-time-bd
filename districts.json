@@ -1,0 +1,518 @@
+{
+    "districts": [
+      {
+        "name": "Barguna District",
+        "bengali_name": "বরগুনা",
+        "adjustments": {
+          "suhoor": 5,
+          "iftar": -2
+        }
+      },
+      {
+        "name": "Barishal District",
+        "bengali_name": "বরিশাল",
+        "adjustments": {
+          "suhoor": 2,
+          "iftar": -2
+        }
+      },
+      {
+        "name": "Bhola District",
+        "bengali_name": "ভোলা",
+        "adjustments": {
+          "suhoor": 2,
+          "iftar": -3
+        }
+      },
+      {
+        "name": "Jhalokati District",
+        "bengali_name": "ঝালকাঠি",
+        "adjustments": {
+          "suhoor": 3,
+          "iftar": -1
+        }
+      },
+      {
+        "name": "Patuakhali District",
+        "bengali_name": "পটুয়াখালি",
+        "adjustments": {
+          "suhoor": 4,
+          "iftar": -2
+        }
+      },
+      {
+        "name": "Pirojpur District",
+        "bengali_name": "পিরোজপুর",
+        "adjustments": {
+          "suhoor": 5,
+          "iftar": 0
+        }
+      },
+      {
+        "name": "Bandarban District",
+        "bengali_name": "বান্দরবান",
+        "adjustments": {
+          "suhoor": -4,
+          "iftar": -10
+        }
+      },
+      {
+        "name": "Brahmanbaria District",
+        "bengali_name": "ব্রাহ্মণবাড়িয়া",
+        "adjustments": {
+          "suhoor": -4,
+          "iftar": -3
+        }
+      },
+      {
+        "name": "Chandpur District",
+        "bengali_name": "চাঁদপুর",
+        "adjustments": {
+          "suhoor": 0,
+          "iftar": -2
+        }
+      },
+      {
+        "name": "Chattogram District",
+        "bengali_name": "চট্টগ্রাম",
+        "adjustments": {
+          "suhoor": -2,
+          "iftar": -8
+        }
+      },
+      {
+        "name": "Cumilla District",
+        "bengali_name": "কুমিল্লা",
+        "adjustments": {
+          "suhoor": -3,
+          "iftar": -4
+        }
+      },
+      {
+        "name": "Cox's Bazar District",
+        "bengali_name": "কক্সবাজার",
+        "adjustments": {
+          "suhoor": -1,
+          "iftar": -10
+        }
+      },
+      {
+        "name": "Feni District",
+        "bengali_name": "ফেনী",
+        "adjustments": {
+          "suhoor": -3,
+          "iftar": -5
+        }
+      },
+      {
+        "name": "Khagrachhari District",
+        "bengali_name": "খাগড়াছড়ি",
+        "adjustments": {
+          "suhoor": -5,
+          "iftar": -8
+        }
+      },
+      {
+        "name": "Lakshmipur District",
+        "bengali_name": "লক্ষ্মীপুর",
+        "adjustments": {
+          "suhoor": -1,
+          "iftar": -3
+        }
+      },
+      {
+        "name": "Noakhali District",
+        "bengali_name": "নোয়াখালি",
+        "adjustments": {
+          "suhoor": -1,
+          "iftar": -4
+        }
+      },
+      {
+        "name": "Rangamati District",
+        "bengali_name": "রাঙ্গামাটি",
+        "adjustments": {
+          "suhoor": -4,
+          "iftar": -9
+        }
+      },
+      {
+        "name": "Dhaka District",
+        "bengali_name": "ঢাকা",
+        "adjustments": {
+          "suhoor": 0,
+          "iftar": 0
+        }
+      },
+      {
+        "name": "Faridpur District",
+        "bengali_name": "ফরিদপুর",
+        "adjustments": {
+          "suhoor": 2,
+          "iftar": 2
+        }
+      },
+      {
+        "name": "Gazipur District",
+        "bengali_name": "গাজীপুর",
+        "adjustments": {
+          "suhoor": -1,
+          "iftar": 0
+        }
+      },
+      {
+        "name": "Gopalganj District",
+        "bengali_name": "গোপালগঞ্জ",
+        "adjustments": {
+          "suhoor": 4,
+          "iftar": 1
+        }
+      },
+      {
+        "name": "Kishoreganj District",
+        "bengali_name": "কিশোরগঞ্জ",
+        "adjustments": {
+          "suhoor": -3,
+          "iftar": -1
+        }
+      },
+      {
+        "name": "Madaripur District",
+        "bengali_name": "মাদারিপুর",
+        "adjustments": {
+          "suhoor": 2,
+          "iftar": 0
+        }
+      },
+      {
+        "name": "Manikganj District",
+        "bengali_name": "মানিকগঞ্জ",
+        "adjustments": {
+          "suhoor": 1,
+          "iftar": 2
+        }
+      },
+      {
+        "name": "Munshiganj District",
+        "bengali_name": "মুন্সিগঞ্জ",
+        "adjustments": {
+          "suhoor": 0,
+          "iftar": -1
+        }
+      },
+      {
+        "name": "Narayanganj District",
+        "bengali_name": "নারায়ণগঞ্জ",
+        "adjustments": {
+          "suhoor": 0,
+          "iftar": -1
+        }
+      },
+      {
+        "name": "Narsingdi District",
+        "bengali_name": "নরসিংদি",
+        "adjustments": {
+          "suhoor": -2,
+          "iftar": -1
+        }
+      },
+      {
+        "name": "Rajbari District",
+        "bengali_name": "রাজবাড়ি",
+        "adjustments": {
+          "suhoor": 4,
+          "iftar": 4
+        }
+      },
+      {
+        "name": "Shariatpur District",
+        "bengali_name": "শরিয়তপুর",
+        "adjustments": {
+          "suhoor": 2,
+          "iftar": -1
+        }
+      },
+      {
+        "name": "Tangail District",
+        "bengali_name": "টাঙ্গাইল",
+        "adjustments": {
+          "suhoor": 0,
+          "iftar": 2
+        }
+      },
+      {
+        "name": "Bagerhat District",
+        "bengali_name": "বাগেরহাট",
+        "adjustments": {
+          "suhoor": 5,
+          "iftar": 1
+        }
+      },
+      {
+        "name": "Chuadanga District",
+        "bengali_name": "চুয়াডাঙ্গা",
+        "adjustments": {
+          "suhoor": 6,
+          "iftar": 6
+        }
+      },
+      {
+        "name": "Jashore District",
+        "bengali_name": "যশোর",
+        "adjustments": {
+          "suhoor": 6,
+          "iftar": 4
+        }
+      },
+      {
+        "name": "Jhenaidah District",
+        "bengali_name": "ঝিনাইদহ",
+        "adjustments": {
+          "suhoor": 5,
+          "iftar": 5
+        }
+      },
+      {
+        "name": "Khulna District",
+        "bengali_name": "খুলনা",
+        "adjustments": {
+          "suhoor": 6,
+          "iftar": 2
+        }
+      },
+      {
+        "name": "Kushtia District",
+        "bengali_name": "কুষ্টিয়া",
+        "adjustments": {
+          "suhoor": 5,
+          "iftar": 5
+        }
+      },
+      {
+        "name": "Magura District",
+        "bengali_name": "মাগুরা",
+        "adjustments": {
+          "suhoor": 4,
+          "iftar": 3
+        }
+      },
+      {
+        "name": "Meherpur District",
+        "bengali_name": "মেহেরপুর",
+        "adjustments": {
+          "suhoor": 7,
+          "iftar": 7
+        }
+      },
+      {
+        "name": "Narail District",
+        "bengali_name": "নড়াইল",
+        "adjustments": {
+          "suhoor": 5,
+          "iftar": 2
+        }
+      },
+      {
+        "name": "Satkhira District",
+        "bengali_name": "সাতক্ষীরা",
+        "adjustments": {
+          "suhoor": 8,
+          "iftar": 4
+        }
+      },
+      {
+        "name": "Jamalpur District",
+        "bengali_name": "জামালপুর",
+        "adjustments": {
+          "suhoor": -2,
+          "iftar": 4
+        }
+      },
+      {
+        "name": "Mymensingh District",
+        "bengali_name": "ময়মনসিংহ",
+        "adjustments": {
+          "suhoor": -3,
+          "iftar": 1
+        }
+      },
+      {
+        "name": "Netrokona District",
+        "bengali_name": "নেত্রকোনা",
+        "adjustments": {
+          "suhoor": -5,
+          "iftar": 0
+        }
+      },
+      {
+        "name": "Sherpur District",
+        "bengali_name": "শেরপুর",
+        "adjustments": {
+          "suhoor": -2,
+          "iftar": 3
+        }
+      },
+      {
+        "name": "Bogura District",
+        "bengali_name": "বগুড়া",
+        "adjustments": {
+          "suhoor": 1,
+          "iftar": 6
+        }
+      },
+      {
+        "name": "Joypurhat District",
+        "bengali_name": "জয়পুরহাট",
+        "adjustments": {
+          "suhoor": 2,
+          "iftar": 8
+        }
+      },
+      {
+        "name": "Naogaon District",
+        "bengali_name": "নওগাঁ",
+        "adjustments": {
+          "suhoor": 3,
+          "iftar": 8
+        }
+      },
+      {
+        "name": "Natore District",
+        "bengali_name": "নাটোর",
+        "adjustments": {
+          "suhoor": 4,
+          "iftar": 7
+        }
+      },
+      {
+        "name": "Chapainawabganj District",
+        "bengali_name": "চাঁপাইনবাবগঞ্জ",
+        "adjustments": {
+          "suhoor": 6,
+          "iftar": 10
+        }
+      },
+      {
+        "name": "Pabna District",
+        "bengali_name": "পাবনা",
+        "adjustments": {
+          "suhoor": 4,
+          "iftar": 5
+        }
+      },
+      {
+        "name": "Rajshahi District",
+        "bengali_name": "রাজশাহী",
+        "adjustments": {
+          "suhoor": 5,
+          "iftar": 8
+        }
+      },
+      {
+        "name": "Sirajganj District",
+        "bengali_name": "সিরাজগঞ্জ",
+        "adjustments": {
+          "suhoor": 1,
+          "iftar": 4
+        }
+      },
+      {
+        "name": "Dinajpur District",
+        "bengali_name": "দিনাজপুর",
+        "adjustments": {
+          "suhoor": 2,
+          "iftar": 10
+        }
+      },
+      {
+        "name": "Gaibandha District",
+        "bengali_name": "গাইবান্ধা",
+        "adjustments": {
+          "suhoor": -1,
+          "iftar": 6
+        }
+      },
+      {
+        "name": "Kurigram District",
+        "bengali_name": "কুড়িগ্রাম",
+        "adjustments": {
+          "suhoor": -2,
+          "iftar": 7
+        }
+      },
+      {
+        "name": "Lalmonirhat District",
+        "bengali_name": "লালমনিরহাট",
+        "adjustments": {
+          "suhoor": -2,
+          "iftar": 7
+        }
+      },
+      {
+        "name": "Nilphamari District",
+        "bengali_name": "নীলফামারি",
+        "adjustments": {
+          "suhoor": 1,
+          "iftar": 10
+        }
+      },
+      {
+        "name": "Panchagarh District",
+        "bengali_name": "পঞ্চগড়",
+        "adjustments": {
+          "suhoor": 1,
+          "iftar": 12
+        }
+      },
+      {
+        "name": "Rangpur District",
+        "bengali_name": "রংপুর",
+        "adjustments": {
+          "suhoor": -1,
+          "iftar": 8
+        }
+      },
+      {
+        "name": "Thakurgaon District",
+        "bengali_name": "ঠাকুরগাঁও",
+        "adjustments": {
+          "suhoor": 2,
+          "iftar": 12
+        }
+      },
+      {
+        "name": "Habiganj District",
+        "bengali_name": "হবিগঞ্জ",
+        "adjustments": {
+          "suhoor": -6,
+          "iftar": -3
+        }
+      },
+      {
+        "name": "Moulvibazar District",
+        "bengali_name": "মৌলভীবাজার",
+        "adjustments": {
+          "suhoor": -8,
+          "iftar": -4
+        }
+      },
+      {
+        "name": "Sunamganj District",
+        "bengali_name": "সুনামগঞ্জ",
+        "adjustments": {
+          "suhoor": -7,
+          "iftar": -2
+        }
+      },
+      {
+        "name": "Sylhet District",
+        "bengali_name": "সিলেট",
+        "adjustments": {
+          "suhoor": -9,
+          "iftar": -4
+        }
+      }
+    ]
+  }
+
+ 
