@@ -1,40 +1,11 @@
-// prayerSchedule.js
 const { schedule } = require("./calendar.js");
-const { isRamadan } = require("./util.js");
+const { isRamadan, getTodaySchedule } = require("./util.js");
 
 schedule.year = new Date().getFullYear();
 
-function getTodaySchedule() {
-  const today = new Date();
-  const currentMonth = today.toLocaleString("default", { month: "long" });
-  const currentDate = today.getDate();
-
-  // Find the current month's data
-  const monthData = schedule.months.find((m) => m.name === currentMonth);
-  if (!monthData) {
-    return null;
-  }
-
-  // Find the closest date in the schedule
-  let closestSchedule = monthData.schedule[0];
-  let closestDiff = Math.abs(currentDate - parseInt(closestSchedule.date));
-
-  for (const daySchedule of monthData.schedule) {
-    const diff = Math.abs(currentDate - parseInt(daySchedule.date));
-    if (diff < closestDiff) {
-      closestDiff = diff;
-      closestSchedule = daySchedule;
-    }
-  }
-
-  return {
-    date: `${currentMonth} ${currentDate}, ${schedule.year}`,
-    schedule: closestSchedule,
-  };
-}
 
 function displaySchedule() {
-  const result = getTodaySchedule();
+  const result = getTodaySchedule(schedule);
   if (!result) {
     console.log("Schedule not available for today.");
     return;

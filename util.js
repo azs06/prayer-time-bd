@@ -7,18 +7,53 @@ const isRamadan = (date) => {
   return checkDate >= ramadanStart && checkDate <= ramadanEnd;
 };
 
-const getTodaySchedule = () => {
+function getClosestSchedule(schedule) {
+    const today = new Date();
+    const currentMonth = today.toLocaleString("default", { month: "long" });
+    const currentDate = today.getDate();
+  
+    // Find the current month's data
+    const monthData = schedule.months.find((m) => m.name === currentMonth);
+    if (!monthData) {
+      return null;
+    }
+  
+    // Find the closest date in the schedule
+    let closestSchedule = monthData.schedule[0];
+    let closestDiff = Math.abs(currentDate - parseInt(closestSchedule.date));
+  
+    for (const daySchedule of monthData.schedule) {
+      const diff = Math.abs(currentDate - parseInt(daySchedule.date));
+      if (diff < closestDiff) {
+        closestDiff = diff;
+        closestSchedule = daySchedule;
+      }
+    }
+  
+    return {
+      date: `${currentMonth} ${currentDate}, ${schedule.year}`,
+      schedule: closestSchedule,
+    };
+  }
+
+const getTodaySchedule = (schedule) => {
+  if (!schedule || !schedule.months) return {};
   const today = new Date();
   const month = today.toLocaleString("default", { month: "long" });
   const day = today.getDate().toString().padStart(2, "0");
 
-  const monthData = prayerSchedule2025.months.find((m) => m.name === month);
+  const monthData = schedule.months.find((m) => m.name === month);
+  console.log({ monthData });
   if (!monthData) return null;
 
   const daySchedule = monthData.schedule.find(
     (s) => parseInt(s.date) === parseInt(day)
   );
-  return daySchedule;
+  return {
+    date: `${month} ${day}, ${schedule.year}`,
+    schedule: daySchedule ? daySchedule : getClosestSchedule(schedule).schedule,
+  }
+
 };
 
 const getNextPrayer = (schedule) => {
@@ -50,8 +85,33 @@ const getNextPrayer = (schedule) => {
   return prayers[0]; // Return first prayer of next day if all prayers passed
 };
 
-module.exports = {
-    isRamadan,
-    getTodaySchedule,
-    getNextPrayer,
+function adjustTime(timeStr, minutesToAdd) {
+  const [time, period] = timeStr.split(" ");
+  const [hours, minutes] = time.split(":").map(Number);
+
+  let totalMinutes = hours * 60 + minutes;
+  totalMinutes += minutesToAdd;
+
+  let newHours = Math.floor(totalMinutes / 60);
+  let newMinutes = totalMinutes % 60;
+
+  // Handle day wrap-around
+  if (newHours >= 12) {
+    newHours = newHours % 12;
+    if (newHours === 0) newHours = 12;
+    if (period === "AM") period = "PM";
+  }
+  if (newHours === 0) newHours = 12;
+
+  return `${newHours}:${String(newMinutes).padStart(2, "0")} ${period}`;
 }
+
+
+
+module.exports = {
+  isRamadan,
+  getTodaySchedule,
+  getNextPrayer,
+  getClosestSchedule,
+  adjustTime
+};
