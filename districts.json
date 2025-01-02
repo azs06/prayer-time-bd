@@ -1,7 +1,7 @@
 {
     "districts": [
       {
-        "name": "Barguna District",
+        "name": "Barguna",
         "bengali_name": "বরগুনা",
         "adjustments": {
           "suhoor": 5,
@@ -9,7 +9,7 @@
         }
       },
       {
-        "name": "Barishal District",
+        "name": "Barishal",
         "bengali_name": "বরিশাল",
         "adjustments": {
           "suhoor": 2,
@@ -17,7 +17,7 @@
         }
       },
       {
-        "name": "Bhola District",
+        "name": "Bhola",
         "bengali_name": "ভোলা",
         "adjustments": {
           "suhoor": 2,
@@ -25,7 +25,7 @@
         }
       },
       {
-        "name": "Jhalokati District",
+        "name": "Jhalokati",
         "bengali_name": "ঝালকাঠি",
         "adjustments": {
           "suhoor": 3,
@@ -33,7 +33,7 @@
         }
       },
       {
-        "name": "Patuakhali District",
+        "name": "Patuakhali",
         "bengali_name": "পটুয়াখালি",
         "adjustments": {
           "suhoor": 4,
@@ -41,7 +41,7 @@
         }
       },
       {
-        "name": "Pirojpur District",
+        "name": "Pirojpur",
         "bengali_name": "পিরোজপুর",
         "adjustments": {
           "suhoor": 5,
@@ -49,7 +49,7 @@
         }
       },
       {
-        "name": "Bandarban District",
+        "name": "Bandarban",
         "bengali_name": "বান্দরবান",
         "adjustments": {
           "suhoor": -4,
@@ -57,7 +57,7 @@
         }
       },
       {
-        "name": "Brahmanbaria District",
+        "name": "Brahmanbaria",
         "bengali_name": "ব্রাহ্মণবাড়িয়া",
         "adjustments": {
           "suhoor": -4,
@@ -65,7 +65,7 @@
         }
       },
       {
-        "name": "Chandpur District",
+        "name": "Chandpur",
         "bengali_name": "চাঁদপুর",
         "adjustments": {
           "suhoor": 0,
@@ -73,7 +73,7 @@
         }
       },
       {
-        "name": "Chattogram District",
+        "name": "Chattogram",
         "bengali_name": "চট্টগ্রাম",
         "adjustments": {
           "suhoor": -2,
@@ -81,7 +81,7 @@
         }
       },
       {
-        "name": "Cumilla District",
+        "name": "Cumilla",
         "bengali_name": "কুমিল্লা",
         "adjustments": {
           "suhoor": -3,
@@ -89,7 +89,7 @@
         }
       },
       {
-        "name": "Cox's Bazar District",
+        "name": "Cox's Bazar",
         "bengali_name": "কক্সবাজার",
         "adjustments": {
           "suhoor": -1,
@@ -97,7 +97,7 @@
         }
       },
       {
-        "name": "Feni District",
+        "name": "Feni",
         "bengali_name": "ফেনী",
         "adjustments": {
           "suhoor": -3,
@@ -105,7 +105,7 @@
         }
       },
       {
-        "name": "Khagrachhari District",
+        "name": "Khagrachhari",
         "bengali_name": "খাগড়াছড়ি",
         "adjustments": {
           "suhoor": -5,
@@ -113,7 +113,7 @@
         }
       },
       {
-        "name": "Lakshmipur District",
+        "name": "Lakshmipur",
         "bengali_name": "লক্ষ্মীপুর",
         "adjustments": {
           "suhoor": -1,
@@ -121,7 +121,7 @@
         }
       },
       {
-        "name": "Noakhali District",
+        "name": "Noakhali",
         "bengali_name": "নোয়াখালি",
         "adjustments": {
           "suhoor": -1,
@@ -129,7 +129,7 @@
         }
       },
       {
-        "name": "Rangamati District",
+        "name": "Rangamati",
         "bengali_name": "রাঙ্গামাটি",
         "adjustments": {
           "suhoor": -4,
@@ -137,7 +137,7 @@
         }
       },
       {
-        "name": "Dhaka District",
+        "name": "Dhaka",
         "bengali_name": "ঢাকা",
         "adjustments": {
           "suhoor": 0,
@@ -145,7 +145,7 @@
         }
       },
       {
-        "name": "Faridpur District",
+        "name": "Faridpur",
         "bengali_name": "ফরিদপুর",
         "adjustments": {
           "suhoor": 2,
@@ -153,7 +153,7 @@
         }
       },
       {
-        "name": "Gazipur District",
+        "name": "Gazipur",
         "bengali_name": "গাজীপুর",
         "adjustments": {
           "suhoor": -1,
@@ -161,7 +161,7 @@
         }
       },
       {
-        "name": "Gopalganj District",
+        "name": "Gopalganj",
         "bengali_name": "গোপালগঞ্জ",
         "adjustments": {
           "suhoor": 4,
@@ -169,7 +169,7 @@
         }
       },
       {
-        "name": "Kishoreganj District",
+        "name": "Kishoreganj",
         "bengali_name": "কিশোরগঞ্জ",
         "adjustments": {
           "suhoor": -3,
@@ -177,7 +177,7 @@
         }
       },
       {
-        "name": "Madaripur District",
+        "name": "Madaripur",
         "bengali_name": "মাদারিপুর",
         "adjustments": {
           "suhoor": 2,
@@ -185,7 +185,7 @@
         }
       },
       {
-        "name": "Manikganj District",
+        "name": "Manikganj",
         "bengali_name": "মানিকগঞ্জ",
         "adjustments": {
           "suhoor": 1,
@@ -193,7 +193,7 @@
         }
       },
       {
-        "name": "Munshiganj District",
+        "name": "Munshiganj",
         "bengali_name": "মুন্সিগঞ্জ",
         "adjustments": {
           "suhoor": 0,
@@ -201,7 +201,7 @@
         }
       },
       {
-        "name": "Narayanganj District",
+        "name": "Narayanganj",
         "bengali_name": "নারায়ণগঞ্জ",
         "adjustments": {
           "suhoor": 0,
@@ -209,7 +209,7 @@
         }
       },
       {
-        "name": "Narsingdi District",
+        "name": "Narsingdi",
         "bengali_name": "নরসিংদি",
         "adjustments": {
           "suhoor": -2,
@@ -217,7 +217,7 @@
         }
       },
       {
-        "name": "Rajbari District",
+        "name": "Rajbari",
         "bengali_name": "রাজবাড়ি",
         "adjustments": {
           "suhoor": 4,
@@ -225,7 +225,7 @@
         }
       },
       {
-        "name": "Shariatpur District",
+        "name": "Shariatpur",
         "bengali_name": "শরিয়তপুর",
         "adjustments": {
           "suhoor": 2,
@@ -233,7 +233,7 @@
         }
       },
       {
-        "name": "Tangail District",
+        "name": "Tangail",
         "bengali_name": "টাঙ্গাইল",
         "adjustments": {
           "suhoor": 0,
@@ -241,7 +241,7 @@
         }
       },
       {
-        "name": "Bagerhat District",
+        "name": "Bagerhat",
         "bengali_name": "বাগেরহাট",
         "adjustments": {
           "suhoor": 5,
@@ -249,7 +249,7 @@
         }
       },
       {
-        "name": "Chuadanga District",
+        "name": "Chuadanga",
         "bengali_name": "চুয়াডাঙ্গা",
         "adjustments": {
           "suhoor": 6,
@@ -257,7 +257,7 @@
         }
       },
       {
-        "name": "Jashore District",
+        "name": "Jashore",
         "bengali_name": "যশোর",
         "adjustments": {
           "suhoor": 6,
@@ -265,7 +265,7 @@
         }
       },
       {
-        "name": "Jhenaidah District",
+        "name": "Jhenaidah",
         "bengali_name": "ঝিনাইদহ",
         "adjustments": {
           "suhoor": 5,
@@ -273,7 +273,7 @@
         }
       },
       {
-        "name": "Khulna District",
+        "name": "Khulna",
         "bengali_name": "খুলনা",
         "adjustments": {
           "suhoor": 6,
@@ -281,7 +281,7 @@
         }
       },
       {
-        "name": "Kushtia District",
+        "name": "Kushtia",
         "bengali_name": "কুষ্টিয়া",
         "adjustments": {
           "suhoor": 5,
@@ -289,7 +289,7 @@
         }
       },
       {
-        "name": "Magura District",
+        "name": "Magura",
         "bengali_name": "মাগুরা",
         "adjustments": {
           "suhoor": 4,
@@ -297,7 +297,7 @@
         }
       },
       {
-        "name": "Meherpur District",
+        "name": "Meherpur",
         "bengali_name": "মেহেরপুর",
         "adjustments": {
           "suhoor": 7,
@@ -305,7 +305,7 @@
         }
       },
       {
-        "name": "Narail District",
+        "name": "Narail",
         "bengali_name": "নড়াইল",
         "adjustments": {
           "suhoor": 5,
@@ -313,7 +313,7 @@
         }
       },
       {
-        "name": "Satkhira District",
+        "name": "Satkhira",
         "bengali_name": "সাতক্ষীরা",
         "adjustments": {
           "suhoor": 8,
@@ -321,7 +321,7 @@
         }
       },
       {
-        "name": "Jamalpur District",
+        "name": "Jamalpur",
         "bengali_name": "জামালপুর",
         "adjustments": {
           "suhoor": -2,
@@ -329,7 +329,7 @@
         }
       },
       {
-        "name": "Mymensingh District",
+        "name": "Mymensingh",
         "bengali_name": "ময়মনসিংহ",
         "adjustments": {
           "suhoor": -3,
@@ -337,7 +337,7 @@
         }
       },
       {
-        "name": "Netrokona District",
+        "name": "Netrokona",
         "bengali_name": "নেত্রকোনা",
         "adjustments": {
           "suhoor": -5,
@@ -345,7 +345,7 @@
         }
       },
       {
-        "name": "Sherpur District",
+        "name": "Sherpur",
         "bengali_name": "শেরপুর",
         "adjustments": {
           "suhoor": -2,
@@ -353,7 +353,7 @@
         }
       },
       {
-        "name": "Bogura District",
+        "name": "Bogura",
         "bengali_name": "বগুড়া",
         "adjustments": {
           "suhoor": 1,
@@ -361,7 +361,7 @@
         }
       },
       {
-        "name": "Joypurhat District",
+        "name": "Joypurhat",
         "bengali_name": "জয়পুরহাট",
         "adjustments": {
           "suhoor": 2,
@@ -369,7 +369,7 @@
         }
       },
       {
-        "name": "Naogaon District",
+        "name": "Naogaon",
         "bengali_name": "নওগাঁ",
         "adjustments": {
           "suhoor": 3,
@@ -377,7 +377,7 @@
         }
       },
       {
-        "name": "Natore District",
+        "name": "Natore",
         "bengali_name": "নাটোর",
         "adjustments": {
           "suhoor": 4,
@@ -385,7 +385,7 @@
         }
       },
       {
-        "name": "Chapainawabganj District",
+        "name": "Chapainawabganj",
         "bengali_name": "চাঁপাইনবাবগঞ্জ",
         "adjustments": {
           "suhoor": 6,
@@ -393,7 +393,7 @@
         }
       },
       {
-        "name": "Pabna District",
+        "name": "Pabna",
         "bengali_name": "পাবনা",
         "adjustments": {
           "suhoor": 4,
@@ -401,7 +401,7 @@
         }
       },
       {
-        "name": "Rajshahi District",
+        "name": "Rajshahi",
         "bengali_name": "রাজশাহী",
         "adjustments": {
           "suhoor": 5,
@@ -409,7 +409,7 @@
         }
       },
       {
-        "name": "Sirajganj District",
+        "name": "Sirajganj",
         "bengali_name": "সিরাজগঞ্জ",
         "adjustments": {
           "suhoor": 1,
@@ -417,7 +417,7 @@
         }
       },
       {
-        "name": "Dinajpur District",
+        "name": "Dinajpur",
         "bengali_name": "দিনাজপুর",
         "adjustments": {
           "suhoor": 2,
@@ -425,7 +425,7 @@
         }
       },
       {
-        "name": "Gaibandha District",
+        "name": "Gaibandha",
         "bengali_name": "গাইবান্ধা",
         "adjustments": {
           "suhoor": -1,
@@ -433,7 +433,7 @@
         }
       },
       {
-        "name": "Kurigram District",
+        "name": "Kurigram",
         "bengali_name": "কুড়িগ্রাম",
         "adjustments": {
           "suhoor": -2,
@@ -441,7 +441,7 @@
         }
       },
       {
-        "name": "Lalmonirhat District",
+        "name": "Lalmonirhat",
         "bengali_name": "লালমনিরহাট",
         "adjustments": {
           "suhoor": -2,
@@ -449,7 +449,7 @@
         }
       },
       {
-        "name": "Nilphamari District",
+        "name": "Nilphamari",
         "bengali_name": "নীলফামারি",
         "adjustments": {
           "suhoor": 1,
@@ -457,7 +457,7 @@
         }
       },
       {
-        "name": "Panchagarh District",
+        "name": "Panchagarh",
         "bengali_name": "পঞ্চগড়",
         "adjustments": {
           "suhoor": 1,
@@ -465,7 +465,7 @@
         }
       },
       {
-        "name": "Rangpur District",
+        "name": "Rangpur",
         "bengali_name": "রংপুর",
         "adjustments": {
           "suhoor": -1,
@@ -473,7 +473,7 @@
         }
       },
       {
-        "name": "Thakurgaon District",
+        "name": "Thakurgaon",
         "bengali_name": "ঠাকুরগাঁও",
         "adjustments": {
           "suhoor": 2,
@@ -481,7 +481,7 @@
         }
       },
       {
-        "name": "Habiganj District",
+        "name": "Habiganj",
         "bengali_name": "হবিগঞ্জ",
         "adjustments": {
           "suhoor": -6,
@@ -489,7 +489,7 @@
         }
       },
       {
-        "name": "Moulvibazar District",
+        "name": "Moulvibazar",
         "bengali_name": "মৌলভীবাজার",
         "adjustments": {
           "suhoor": -8,
@@ -497,7 +497,7 @@
         }
       },
       {
-        "name": "Sunamganj District",
+        "name": "Sunamganj",
         "bengali_name": "সুনামগঞ্জ",
         "adjustments": {
           "suhoor": -7,
@@ -505,7 +505,7 @@
         }
       },
       {
-        "name": "Sylhet District",
+        "name": "Sylhet",
         "bengali_name": "সিলেট",
         "adjustments": {
           "suhoor": -9,
