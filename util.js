@@ -38,22 +38,7 @@ function getClosestSchedule(schedule) {
 
 const getTodaySchedule = (schedule) => {
   if (!schedule || !schedule.months) return {};
-  const today = new Date();
-  const month = today.toLocaleString("default", { month: "long" });
-  const day = today.getDate().toString().padStart(2, "0");
-
-  const monthData = schedule.months.find((m) => m.name === month);
-  console.log({ monthData });
-  if (!monthData) return null;
-
-  const daySchedule = monthData.schedule.find(
-    (s) => parseInt(s.date) === parseInt(day)
-  );
-  return {
-    date: `${month} ${day}, ${schedule.year}`,
-    schedule: daySchedule ? daySchedule : getClosestSchedule(schedule).schedule,
-  }
-
+  return getClosestSchedule(schedule);
 };
 
 const getNextPrayer = (schedule) => {
