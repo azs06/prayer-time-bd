@@ -57,7 +57,6 @@ async function main() {
 
   // Get today's schedule and apply adjustments
   const baseSchedule = getTodaySchedule(schedule);
-  console.dir(baseSchedule);
   const adjustedSchedule = getAdjustedSchedule(
     baseSchedule.schedule,
     adjustments
