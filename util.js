@@ -7,8 +7,7 @@ const isRamadan = (date) => {
   return checkDate >= ramadanStart && checkDate <= ramadanEnd;
 };
 
-function getClosestSchedule(schedule) {
-    const today = new Date();
+function getClosestSchedule(schedule, today=new Date()) {
     const currentMonth = today.toLocaleString("default", { month: "long" });
     const currentDate = today.getDate();
   

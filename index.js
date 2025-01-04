@@ -2,11 +2,36 @@ const { createPromptModule } = require("inquirer");
 const { loadConfig, saveConfig } = require("./config");
 const districtData = require("./districts.json");
 const { schedule } = require("./calendar");
-const { adjustTime, getTodaySchedule, isRamadan } = require("./util");
+const { adjustTime, isRamadan, getClosestSchedule } = require("./util");
+const yargs = require("yargs");
 
 schedule.year = new Date().getFullYear();
 
 const prompt = createPromptModule();
+
+function validateDistrict(district) {
+  const validDistricts = districtData.districts.map((d) => d.name);
+  return validDistricts.includes(district);
+}
+
+function validateDate(dateString) {
+   // Check if the string matches the format YYYY-MM-DD
+   const regex = /^\d{4}-\d{2}-\d{2}$/;
+   if (!regex.test(dateString)) {
+     return false; // Doesn't match the format
+   }
+ 
+   // Parse the string into a Date object
+   const date = new Date(dateString);
+ 
+   // Check if the date is valid
+   const [year, month, day] = dateString.split("-").map(Number);
+   return (
+     date.getFullYear() === year &&
+     date.getMonth() === month - 1 &&
+     date.getDate() === day
+   );
+}
 
 async function selectDistrict() {
   const districts = districtData.districts.map((d) => ({
@@ -44,23 +69,48 @@ function getAdjustedSchedule(baseSchedule, adjustments) {
 }
 
 async function main() {
+  const argv = yargs
+    .option("district", {
+      alias: "d",
+      type: "string",
+      description: "Specify the district name",
+    })
+    .option("date", {
+      alias: "t",
+      type: "string",
+      description: "Specify the date (YYYY-MM-DD)",
+    })
+    .help().argv;
+
   // Load saved district or ask user to select
   let config = loadConfig();
-  let selectedDistrict = config.selectedDistrict;
+  let selectedDistrict = argv.district || config.selectedDistrict;
 
   if (!selectedDistrict) {
     selectedDistrict = await selectDistrict();
   }
-
+  
+  if(!validateDistrict(selectedDistrict)) {
+    console.log("Invalid district name");
+    console.log("Please select a valid district");
+    selectedDistrict = await selectDistrict();
+  }
   // Get district adjustments
   const adjustments = getDistrictAdjustments(selectedDistrict);
 
+  if(!validateDate(argv.date)) {
+    console.log("Invalid date format");
+    process.exit
+  }
+
   // Get today's schedule and apply adjustments
-  const baseSchedule = getTodaySchedule(schedule);
+  const date = argv.date ? new Date(argv.date) : new Date();
+  const baseSchedule = getClosestSchedule(schedule, date);
   const adjustedSchedule = getAdjustedSchedule(
     baseSchedule.schedule,
     adjustments
   );
+
 
   // Clear console and display header
   console.clear();
