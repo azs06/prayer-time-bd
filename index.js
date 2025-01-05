@@ -7,6 +7,7 @@ const { adjustTime, isRamadan, getClosestSchedule } = require("./util");
 const yargs = require("yargs");
 
 schedule.year = new Date().getFullYear();
+process.stdout.setEncoding("utf8");
 
 const prompt = createPromptModule();
 
@@ -36,7 +37,7 @@ function validateDate(dateString) {
 
 async function selectDistrict() {
   const districts = districtData.districts.map((d) => ({
-    name: `${d.name} (${d.bengali_name})`,
+    name: `${d.name}`,
     value: d.name,
   }));
 
