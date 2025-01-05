@@ -1,6 +1,6 @@
 {
   "name": "prayer-time-bd",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "",
   "main": "index.js",
   "scripts": {
@@ -12,9 +12,10 @@
   "dependencies": {
     "chalk": "^5.4.1",
     "inquirer": "^12.3.0",
+    "prayer-time-bd": "^1.0.1",
     "yargs": "^17.7.2"
   },
   "bin": {
-    "execute": "index.js"
+    "prayer-time-bd": "index.js"
   }
 }
