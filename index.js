@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const { createPromptModule } = require("inquirer");
 const { loadConfig, saveConfig } = require("./config");
 const districtData = require("./districts.json");
