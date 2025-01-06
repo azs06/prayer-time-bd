@@ -132,7 +132,7 @@ async function main() {
       await selectDistrict();
     }
   }
-  let selectedDistrict = config.selectedDistrict; 
+  let selectedDistrict = config.selectedDistrict || await selectDistrict();
 
   // Get today's schedule and apply adjustments
   const date = argv.date ? new Date(argv.date) : new Date();
