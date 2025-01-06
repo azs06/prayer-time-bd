@@ -1,8 +1,8 @@
 {
   "name": "prayer-time-bd",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "exports": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -17,5 +17,6 @@
   },
   "bin": {
     "prayer-time-bd": "index.js"
-  }
+  },
+  "type": "module"
 }

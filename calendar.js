@@ -784,6 +784,6 @@ const schedule = {
   ],
 };
 
-module.exports = {
+export {
   schedule,
 }

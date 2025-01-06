@@ -92,7 +92,7 @@ function adjustTime(timeStr, minutesToAdd) {
 
 
 
-module.exports = {
+export {
   isRamadan,
   getTodaySchedule,
   getNextPrayer,
