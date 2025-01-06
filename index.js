@@ -1,13 +1,14 @@
 #!/usr/bin/env node
 import inquirer from "inquirer";
 import { loadConfig, saveConfig } from "./config.js";
-import districtData from "./districts.json" assert { type: "json" };
+import { districtData } from "./data.js";
 import { schedule } from "./calendar.js";
 import { isRamadan } from "./util.js";
 import { getPrayerTimes } from "./core.js";
-import yargs from 'yargs'
+import yargs from "yargs";
+import { hideBin } from "yargs/helpers";
 
-const y = yargs();
+const y = yargs(hideBin(process.argv));
 
 schedule.year = new Date().getFullYear();
 
@@ -55,46 +56,9 @@ async function selectDistrict() {
   return district;
 }
 
-async function main() {
-  const argv = y
-    .option("district", {
-      alias: "d",
-      type: "string",
-      description: "Specify the district name",
-    })
-    .option("date", {
-      alias: "t",
-      type: "string",
-      description: "Specify the date (YYYY-MM-DD)",
-    })
-    .help().argv;
-
-  // Load saved district or ask user to select
-  let config = loadConfig();
-  let selectedDistrict = argv.district || config.selectedDistrict;
-
-  if (!selectedDistrict) {
-    selectedDistrict = await selectDistrict();
-  }
-
-  if (!validateDistrict(selectedDistrict)) {
-    console.log("Invalid district name");
-    console.log("Please select a valid district");
-    selectedDistrict = await selectDistrict();
-  }
-
-  if (!validateDate(argv.date)) {
-    console.log("Invalid date format");
-    process.exit;
-  }
-
-  // Get today's schedule and apply adjustments
-  const date = argv.date ? new Date(argv.date) : new Date();
-  // const baseSchedule = getClosestSchedule(schedule, date);
-  const adjustedSchedule = getPrayerTimes(date, selectedDistrict);
-
+function display(date, selectedDistrict, adjustedSchedule) {
   // Clear console and display header
-  console.clear();
+  //console.clear();
   console.log("\n=================================");
   console.log(`Prayer Schedule for ${date}`);
   console.log(`District: ${selectedDistrict}`);
@@ -137,9 +101,48 @@ async function main() {
   });
 }
 
+async function main() {
+  const argv = y
+    .option("district", {
+      alias: "d",
+      type: "string",
+      description: "Specify the district name",
+    })
+    .option("date", {
+      alias: "t",
+      type: "string",
+      description: "Specify the date (YYYY-MM-DD)",
+    })
+    .help().argv;
+
+  if (argv.date && !validateDate(argv.date)) {
+    console.log("Invalid date format");
+    process.exit;
+    return;
+  }
+
+  // Validate user input district and provide options otherwise
+  let config = loadConfig();
+  if (argv.district) {
+    if (validateDistrict(argv.district)) {
+      saveConfig({ selectedDistrict: argv.district });
+    } else if(!config.selectedDistrict) {
+      console.log("Invalid district name");
+      console.log("Please select a valid district");
+      await selectDistrict();
+    }
+  }
+  let selectedDistrict = config.selectedDistrict; 
+
+  // Get today's schedule and apply adjustments
+  const date = argv.date ? new Date(argv.date) : new Date();
+  // const baseSchedule = getClosestSchedule(schedule, date);
+  const adjustedSchedule = getPrayerTimes(date, selectedDistrict);
+
+  display(date, selectedDistrict, adjustedSchedule);
+}
+
 // Start the application
 main().catch(console.error);
 
-export {
-  getPrayerTimes
-}
+export { getPrayerTimes };
