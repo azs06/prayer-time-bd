@@ -1,5 +1,5 @@
 // Complete year data structure with all months
-const schedule = {
+export const schedule = {
   months: [
     {
       name: "January",
@@ -12,7 +12,7 @@ const schedule = {
           asr: "3:46 PM",
           magrib_iftar: "5:27 PM",
           isha: "6:45 PM",
-          sunrise: "6:41 PM",
+          sunrise: "6:41 AM",
         },
         {
           date: "06",
@@ -22,7 +22,7 @@ const schedule = {
           asr: "3:50 PM",
           magrib_iftar: "5:30 PM",
           isha: "6:48 PM",
-          sunrise: "6:42 PM",
+          sunrise: "6:42 AM",
         },
         {
           date: "12",
@@ -32,7 +32,7 @@ const schedule = {
           asr: "3:54 PM",
           magrib_iftar: "5:34 PM",
           isha: "6:51 PM",
-          sunrise: "6:43 PM",
+          sunrise: "6:43 AM",
         },
         {
           date: "18",
@@ -42,7 +42,7 @@ const schedule = {
           asr: "3:58 PM",
           magrib_iftar: "5:38 PM",
           isha: "6:55 PM",
-          sunrise: "6:43 PM",
+          sunrise: "6:43 AM",
         },
         {
           date: "24",
@@ -52,7 +52,7 @@ const schedule = {
           asr: "4:03 PM",
           magrib_iftar: "5:43 PM",
           isha: "6:59 PM",
-          sunrise: "6:41 PM",
+          sunrise: "6:41 AM",
         },
         {
           date: "30",
@@ -62,7 +62,7 @@ const schedule = {
           asr: "4:07 PM",
           magrib_iftar: "5:47 PM",
           isha: "7:03 PM",
-          sunrise: "6:40 PM",
+          sunrise: "6:40 AM",
         },
       ],
     },
@@ -77,7 +77,7 @@ const schedule = {
           asr: "4:08 PM",
           magrib_iftar: "5:48 PM",
           isha: "7:04 PM",
-          sunrise: "6:39 PM",
+          sunrise: "6:39 AM",
         },
         {
           date: "06",
@@ -87,7 +87,7 @@ const schedule = {
           asr: "4:11 PM",
           magrib_iftar: "5:52 PM",
           isha: "7:07 PM",
-          sunrise: "6:37 PM",
+          sunrise: "6:37 AM",
         },
         {
           date: "12",
@@ -97,7 +97,7 @@ const schedule = {
           asr: "4:15 PM",
           magrib_iftar: "5:55 PM",
           isha: "7:10 PM",
-          sunrise: "6:33 PM",
+          sunrise: "6:33 AM",
         },
         {
           date: "18",
@@ -107,7 +107,7 @@ const schedule = {
           asr: "4:18 PM",
           magrib_iftar: "5:59 PM",
           isha: "7:13 PM",
-          sunrise: "6:29 PM",
+          sunrise: "6:29 AM",
         },
         {
           date: "24",
@@ -117,7 +117,7 @@ const schedule = {
           asr: "4:20 PM",
           magrib_iftar: "6:02 PM",
           isha: "7:16 PM",
-          sunrise: "6:25 PM",
+          sunrise: "6:25 AM",
         },
         {
           date: "30",
@@ -127,7 +127,7 @@ const schedule = {
           asr: "4:22 PM",
           magrib_iftar: "6:04 PM",
           isha: "7:17 PM",
-          sunrise: "6:21 PM",
+          sunrise: "6:21 AM",
         },
       ],
     },
@@ -142,7 +142,7 @@ const schedule = {
           asr: "4:22 PM",
           magrib_iftar: "6:05 PM",
           isha: "7:18 PM",
-          sunrise: "6:20 PM",
+          sunrise: "6:20 AM",
         },
         {
           date: "06",
@@ -152,7 +152,7 @@ const schedule = {
           asr: "4:24 PM",
           magrib_iftar: "6:07 PM",
           isha: "7:20 PM",
-          sunrise: "6:16 PM",
+          sunrise: "6:16 AM",
         },
         {
           date: "12",
@@ -162,7 +162,7 @@ const schedule = {
           asr: "4:26 PM",
           magrib_iftar: "6:10 PM",
           isha: "7:23 PM",
-          sunrise: "6:10 PM",
+          sunrise: "6:10 AM",
         },
         {
           date: "18",
@@ -172,7 +172,7 @@ const schedule = {
           asr: "4:27 PM",
           magrib_iftar: "6:12 PM",
           isha: "7:25 PM",
-          sunrise: "6:04 PM",
+          sunrise: "6:04 AM",
         },
         {
           date: "24",
@@ -182,7 +182,7 @@ const schedule = {
           asr: "4:28 PM",
           magrib_iftar: "6:14 PM",
           isha: "7:28 PM",
-          sunrise: "5:58 PM",
+          sunrise: "5:58 AM",
         },
         {
           date: "30",
@@ -192,7 +192,7 @@ const schedule = {
           asr: "4:29 PM",
           magrib_iftar: "6:17 PM",
           isha: "7:32 PM",
-          sunrise: "5:52 PM",
+          sunrise: "5:52 AM",
         },
       ],
     },
@@ -207,7 +207,7 @@ const schedule = {
           asr: "4:29 PM",
           magrib_iftar: "6:18 PM",
           isha: "7:33 PM",
-          sunrise: "5:50 PM",
+          sunrise: "5:50 AM",
         },
         {
           date: "06",
@@ -217,7 +217,7 @@ const schedule = {
           asr: "4:29 PM",
           magrib_iftar: "6:20 PM",
           isha: "7:35 PM",
-          sunrise: "5:45 PM",
+          sunrise: "5:45 AM",
         },
         {
           date: "12",
@@ -227,7 +227,7 @@ const schedule = {
           asr: "4:30 PM",
           magrib_iftar: "6:23 PM",
           isha: "7:38 PM",
-          sunrise: "5:39 PM",
+          sunrise: "5:39 AM",
         },
         {
           date: "18",
@@ -237,7 +237,7 @@ const schedule = {
           asr: "4:30 PM",
           magrib_iftar: "6:25 PM",
           isha: "7:41 PM",
-          sunrise: "5:34 PM",
+          sunrise: "5:34 AM",
         },
         {
           date: "24",
@@ -247,7 +247,7 @@ const schedule = {
           asr: "4:30 PM",
           magrib_iftar: "6:28 PM",
           isha: "7:45 PM",
-          sunrise: "5:29 PM",
+          sunrise: "5:29 AM",
         },
         {
           date: "30",
@@ -257,7 +257,7 @@ const schedule = {
           asr: "4:31 PM",
           magrib_iftar: "6:30 PM",
           isha: "7:49 PM",
-          sunrise: "5:24 PM",
+          sunrise: "5:24 AM",
         },
       ],
     },
@@ -272,7 +272,7 @@ const schedule = {
           asr: "4:31 PM",
           magrib_iftar: "6:31 PM",
           isha: "7:50 PM",
-          sunrise: "5:24 PM",
+          sunrise: "5:24 AM",
         },
         {
           date: "06",
@@ -282,7 +282,7 @@ const schedule = {
           asr: "4:31 PM",
           magrib_iftar: "6:33 PM",
           isha: "7:54 PM",
-          sunrise: "5:20 PM",
+          sunrise: "5:20 AM",
         },
         {
           date: "12",
@@ -292,7 +292,7 @@ const schedule = {
           asr: "4:32 PM",
           magrib_iftar: "6:36 PM",
           isha: "7:58 PM",
-          sunrise: "5:17 PM",
+          sunrise: "5:17 AM",
         },
         {
           date: "18",
@@ -302,7 +302,7 @@ const schedule = {
           asr: "4:33 PM",
           magrib_iftar: "6:39 PM",
           isha: "8:01 PM",
-          sunrise: "5:14 PM",
+          sunrise: "5:14 AM",
         },
         {
           date: "24",
@@ -312,7 +312,7 @@ const schedule = {
           asr: "4:34 PM",
           magrib_iftar: "6:41 PM",
           isha: "8:06 PM",
-          sunrise: "5:12 PM",
+          sunrise: "5:12 AM",
         },
         {
           date: "30",
@@ -322,7 +322,7 @@ const schedule = {
           asr: "4:35 PM",
           magrib_iftar: "6:45 PM",
           isha: "8:09 PM",
-          sunrise: "5:10 PM",
+          sunrise: "5:10 AM",
         },
       ],
     },
@@ -337,7 +337,7 @@ const schedule = {
           asr: "4:35 PM",
           magrib_iftar: "6:46 PM",
           isha: "8:11 PM",
-          sunrise: "5:10 PM",
+          sunrise: "5:10 AM",
         },
         {
           date: "06",
@@ -347,7 +347,7 @@ const schedule = {
           asr: "4:36 PM",
           magrib_iftar: "6:47 PM",
           isha: "8:13 PM",
-          sunrise: "5:10 PM",
+          sunrise: "5:10 AM",
         },
         {
           date: "12",
@@ -357,7 +357,7 @@ const schedule = {
           asr: "4:38 PM",
           magrib_iftar: "6:50 PM",
           isha: "8:16 PM",
-          sunrise: "5:10 PM",
+          sunrise: "5:10 AM",
         },
         {
           date: "18",
@@ -367,7 +367,7 @@ const schedule = {
           asr: "4:39 PM",
           magrib_iftar: "6:51 PM",
           isha: "8:18 PM",
-          sunrise: "5:11 PM",
+          sunrise: "5:11 AM",
         },
         {
           date: "24",
@@ -377,7 +377,7 @@ const schedule = {
           asr: "4:40 PM",
           magrib_iftar: "6:53 PM",
           isha: "8:19 PM",
-          sunrise: "5:11 PM",
+          sunrise: "5:11 AM",
         },
         {
           date: "30",
@@ -387,7 +387,7 @@ const schedule = {
           asr: "4:42 PM",
           magrib_iftar: "6:53 PM",
           isha: "8:20 PM",
-          sunrise: "5:14 PM",
+          sunrise: "5:14 AM",
         },
       ],
     },
@@ -402,7 +402,7 @@ const schedule = {
           asr: "4:42 PM",
           magrib_iftar: "6:54 PM",
           isha: "8:20 PM",
-          sunrise: "5:14 PM",
+          sunrise: "5:14 AM",
         },
         {
           date: "06",
@@ -412,7 +412,7 @@ const schedule = {
           asr: "4:43 PM",
           magrib_iftar: "6:54 PM",
           isha: "8:20 PM",
-          sunrise: "5:16 PM",
+          sunrise: "5:16 AM",
         },
         {
           date: "12",
@@ -422,7 +422,7 @@ const schedule = {
           asr: "4:43 PM",
           magrib_iftar: "6:53 PM",
           isha: "8:18 PM",
-          sunrise: "5:18 PM",
+          sunrise: "5:18 AM",
         },
         {
           date: "18",
@@ -432,7 +432,7 @@ const schedule = {
           asr: "4:43 PM",
           magrib_iftar: "6:52 PM",
           isha: "8:15 PM",
-          sunrise: "5:21 PM",
+          sunrise: "5:21 AM",
         },
         {
           date: "24",
@@ -442,7 +442,7 @@ const schedule = {
           asr: "4:43 PM",
           magrib_iftar: "6:49 PM",
           isha: "8:12 PM",
-          sunrise: "5:24 PM",
+          sunrise: "5:24 AM",
         },
         {
           date: "30",
@@ -452,7 +452,7 @@ const schedule = {
           asr: "4:42 PM",
           magrib_iftar: "6:46 PM",
           isha: "8:07 PM",
-          sunrise: "5:26 PM",
+          sunrise: "5:26 AM",
         },
       ],
     },
@@ -467,7 +467,7 @@ const schedule = {
           asr: "4:42 PM",
           magrib_iftar: "6:45 PM",
           isha: "8:05 PM",
-          sunrise: "5:27 PM",
+          sunrise: "5:27 AM",
         },
         {
           date: "06",
@@ -477,7 +477,7 @@ const schedule = {
           asr: "4:41 PM",
           magrib_iftar: "6:42 PM",
           isha: "8:01 PM",
-          sunrise: "5:29 PM",
+          sunrise: "5:29 AM",
         },
         {
           date: "12",
@@ -487,7 +487,7 @@ const schedule = {
           asr: "4:39 PM",
           magrib_iftar: "6:38 PM",
           isha: "7:56 PM",
-          sunrise: "5:32 PM",
+          sunrise: "5:32 AM",
         },
         {
           date: "18",
@@ -497,7 +497,7 @@ const schedule = {
           asr: "4:37 PM",
           magrib_iftar: "6:33 PM",
           isha: "7:50 PM",
-          sunrise: "5:34 PM",
+          sunrise: "5:34 AM",
         },
         {
           date: "24",
@@ -507,7 +507,7 @@ const schedule = {
           asr: "4:34 PM",
           magrib_iftar: "6:28 PM",
           isha: "7:44 PM",
-          sunrise: "5:36 PM",
+          sunrise: "5:36 AM",
         },
         {
           date: "30",
@@ -517,7 +517,7 @@ const schedule = {
           asr: "4:30 PM",
           magrib_iftar: "6:22 PM",
           isha: "7:37 PM",
-          sunrise: "5:39 PM",
+          sunrise: "5:39 AM",
         },
       ],
     },
@@ -532,7 +532,7 @@ const schedule = {
           asr: "4:29 PM",
           magrib_iftar: "6:20 PM",
           isha: "7:35 PM",
-          sunrise: "5:39 PM",
+          sunrise: "5:39 AM",
         },
         {
           date: "06",
@@ -542,7 +542,7 @@ const schedule = {
           asr: "4:25 PM",
           magrib_iftar: "6:15 PM",
           isha: "7:30 PM",
-          sunrise: "5:41 PM",
+          sunrise: "5:41 AM",
         },
         {
           date: "12",
@@ -552,7 +552,7 @@ const schedule = {
           asr: "4:21 PM",
           magrib_iftar: "6:09 PM",
           isha: "7:23 PM",
-          sunrise: "5:43 PM",
+          sunrise: "5:43 AM",
         },
         {
           date: "18",
@@ -562,7 +562,7 @@ const schedule = {
           asr: "4:17 PM",
           magrib_iftar: "6:03 PM",
           isha: "7:16 PM",
-          sunrise: "5:46 PM",
+          sunrise: "5:46 AM",
         },
         {
           date: "24",
@@ -572,7 +572,7 @@ const schedule = {
           asr: "4:12 PM",
           magrib_iftar: "5:57 PM",
           isha: "7:10 PM",
-          sunrise: "5:47 PM",
+          sunrise: "5:47 AM",
         },
         {
           date: "30",
@@ -582,7 +582,7 @@ const schedule = {
           asr: "4:07 PM",
           magrib_iftar: "5:50 PM",
           isha: "7:03 PM",
-          sunrise: "5:49 PM",
+          sunrise: "5:49 AM",
         },
       ],
     },
@@ -597,7 +597,7 @@ const schedule = {
           asr: "4:06 PM",
           magrib_iftar: "5:49 PM",
           isha: "7:02 PM",
-          sunrise: "5:49 PM",
+          sunrise: "5:49 AM",
         },
         {
           date: "06",
@@ -607,7 +607,7 @@ const schedule = {
           asr: "4:02 PM",
           magrib_iftar: "5:44 PM",
           isha: "6:57 PM",
-          sunrise: "5:51 PM",
+          sunrise: "5:51 AM",
         },
         {
           date: "12",
@@ -617,7 +617,7 @@ const schedule = {
           asr: "3:57 PM",
           magrib_iftar: "5:39 PM",
           isha: "6:52 PM",
-          sunrise: "5:54 PM",
+          sunrise: "5:54 AM",
         },
         {
           date: "18",
@@ -627,7 +627,7 @@ const schedule = {
           asr: "3:53 PM",
           magrib_iftar: "5:33 PM",
           isha: "6:47 PM",
-          sunrise: "5:57 PM",
+          sunrise: "5:57 AM",
         },
         {
           date: "24",
@@ -637,7 +637,7 @@ const schedule = {
           asr: "3:48 PM",
           magrib_iftar: "5:28 PM",
           isha: "6:42 PM",
-          sunrise: "6:00 PM",
+          sunrise: "6:00 AM",
         },
         {
           date: "30",
@@ -647,7 +647,7 @@ const schedule = {
           asr: "3:44 PM",
           magrib_iftar: "5:24 PM",
           isha: "6:39 PM",
-          sunrise: "6:03 PM",
+          sunrise: "6:03 AM",
         },
       ],
     },
@@ -662,7 +662,7 @@ const schedule = {
           asr: "3:43 PM",
           magrib_iftar: "5:23 PM",
           isha: "6:38 PM",
-          sunrise: "6:04 PM",
+          sunrise: "6:04 AM",
         },
         {
           date: "06",
@@ -672,7 +672,7 @@ const schedule = {
           asr: "3:41 PM",
           magrib_iftar: "5:20 PM",
           isha: "6:35 PM",
-          sunrise: "6:07 PM",
+          sunrise: "6:07 AM",
         },
         {
           date: "12",
@@ -682,7 +682,7 @@ const schedule = {
           asr: "3:38 PM",
           magrib_iftar: "5:17 PM",
           isha: "6:33 PM",
-          sunrise: "6:11 PM",
+          sunrise: "6:11 AM",
         },
         {
           date: "18",
@@ -692,7 +692,7 @@ const schedule = {
           asr: "3:36 PM",
           magrib_iftar: "5:15 PM",
           isha: "6:32 PM",
-          sunrise: "6:15 PM",
+          sunrise: "6:15 AM",
         },
         {
           date: "24",
@@ -702,7 +702,7 @@ const schedule = {
           asr: "3:35 PM",
           magrib_iftar: "5:14 PM",
           isha: "6:31 PM",
-          sunrise: "6:19 PM",
+          sunrise: "6:19 AM",
         },
         {
           date: "30",
@@ -712,7 +712,7 @@ const schedule = {
           asr: "3:35 PM",
           magrib_iftar: "5:14 PM",
           isha: "6:32 PM",
-          sunrise: "6:23 PM",
+          sunrise: "6:23 AM",
         },
       ],
     },
@@ -727,7 +727,7 @@ const schedule = {
           asr: "3:35 PM",
           magrib_iftar: "5:14 PM",
           isha: "6:32 PM",
-          sunrise: "6:24 PM",
+          sunrise: "6:24 AM",
         },
         {
           date: "06",
@@ -737,7 +737,7 @@ const schedule = {
           asr: "3:35 PM",
           magrib_iftar: "5:14 PM",
           isha: "6:33 PM",
-          sunrise: "6:28 PM",
+          sunrise: "6:28 AM",
         },
         {
           date: "12",
@@ -747,7 +747,7 @@ const schedule = {
           asr: "3:37 PM",
           magrib_iftar: "5:16 PM",
           isha: "6:35 PM",
-          sunrise: "6:31 PM",
+          sunrise: "6:31 AM",
         },
         {
           date: "18",
@@ -757,7 +757,7 @@ const schedule = {
           asr: "3:39 PM",
           magrib_iftar: "5:18 PM",
           isha: "6:37 PM",
-          sunrise: "6:35 PM",
+          sunrise: "6:35 AM",
         },
         {
           date: "24",
@@ -767,7 +767,7 @@ const schedule = {
           asr: "3:42 PM",
           magrib_iftar: "5:21 PM",
           isha: "6:40 PM",
-          sunrise: "6:38 PM",
+          sunrise: "6:38 AM",
         },
         {
           date: "30",
@@ -777,13 +777,9 @@ const schedule = {
           asr: "3:45 PM",
           magrib_iftar: "5:25 PM",
           isha: "6:44 PM",
-          sunrise: "6:40 PM",
+          sunrise: "6:40 AM",
         },
       ],
     },
   ],
 };
-
-module.exports = {
-  schedule,
-}

@@ -1,8 +1,8 @@
 {
   "name": "prayer-time-bd",
-  "version": "1.0.4",
+  "version": "2.0.0",
   "description": "",
-  "main": "index.js",
+  "exports": "./index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -12,10 +12,10 @@
   "dependencies": {
     "chalk": "^5.4.1",
     "inquirer": "^12.3.0",
-    "prayer-time-bd": "^1.0.1",
     "yargs": "^17.7.2"
   },
   "bin": {
     "prayer-time-bd": "index.js"
-  }
+  },
+  "type": "module"
 }

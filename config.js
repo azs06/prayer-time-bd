@@ -1,7 +1,12 @@
-const fs = require("fs");
-const path = require("path");
+import fs from "node:fs";
+import path from "node:path";
+import { fileURLToPath } from 'node:url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 const CONFIG_FILE = path.join(__dirname, "userConfig.json");
+
 if (!fs.existsSync(CONFIG_FILE)) {
   fs.writeFileSync(CONFIG_FILE, "{}");
 }
@@ -31,7 +36,7 @@ function saveConfig(config) {
   }
 }
 
-module.exports = {
+export {
   RAMADAN_START_DATE,
   RAMADAN_END_DATE,
   loadConfig,
