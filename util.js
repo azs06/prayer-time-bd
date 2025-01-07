@@ -1,39 +1,53 @@
 // Utility functions
-const isRamadan = (date) => {
+const isRamadan = async (date) => {
   // Ramadan 2025 dates (example - update with actual dates)
-  const ramadanStart = new Date("2025-03-01");
-  const ramadanEnd = new Date("2025-03-30");
   const checkDate = new Date(date);
-  return checkDate >= ramadanStart && checkDate <= ramadanEnd;
+  const formattedDate = checkDate
+    .toISOString()
+    .split("T")[0]
+    .split("-")
+    .reverse()
+    .join("-");
+  const [day, month, year] = formattedDate.split("-");
+  const apiUrl = `https://api.aladhan.com/v1/currentIslamicMonth`;
+  const response = await fetch(apiUrl);
+  if (!response.ok) {
+    throw new Error(`HTTP error! Status: ${response.status}`);
+  }
+
+  const data = await response.json();
+  // Check if the Hijri month is Ramadan
+  const isRamadan = data.data === 9;
+  return isRamadan;
 };
 
-function getClosestSchedule(schedule, today=new Date()) {
-    const currentMonth = today.toLocaleString("default", { month: "long" });
-    const currentDate = today.getDate();
-  
-    // Find the current month's data
-    const monthData = schedule.months.find((m) => m.name === currentMonth);
-    if (!monthData) {
-      return null;
-    }
-  
-    // Find the closest date in the schedule
-    let closestSchedule = monthData.schedule[0];
-    let closestDiff = Math.abs(currentDate - parseInt(closestSchedule.date));
-  
-    for (const daySchedule of monthData.schedule) {
-      const diff = Math.abs(currentDate - parseInt(daySchedule.date));
-      if (diff < closestDiff) {
-        closestDiff = diff;
-        closestSchedule = daySchedule;
-      }
-    }
-  
-    return {
-      date: `${currentMonth} ${currentDate}, ${schedule.year}`,
-      schedule: closestSchedule,
-    };
+function getClosestSchedule(schedule, today = new Date()) {
+  const currentMonth = today.toLocaleString("default", { month: "long" });
+  const currentDate = today.getDate();
+
+  // Find the current month's data
+  const monthData = schedule.months.find((m) => m.name === currentMonth);
+  if (!monthData) {
+    return null;
   }
+
+  // Find the closest date in the schedule
+  let closestSchedule = monthData.schedule[0];
+  let closestDiff = Math.abs(currentDate - parseInt(closestSchedule.date));
+
+  for (const daySchedule of monthData.schedule) {
+    const diff = Math.abs(currentDate - parseInt(daySchedule.date));
+    if (diff < closestDiff) {
+      closestDiff = diff;
+      closestSchedule = daySchedule;
+    }
+  }
+
+  return {
+    date: `${currentMonth} ${currentDate}, ${schedule.year}`,
+    schedule: closestSchedule,
+  };
+}
 
 const getTodaySchedule = (schedule) => {
   if (!schedule || !schedule.months) return {};
@@ -90,12 +104,10 @@ function adjustTime(timeStr, minutesToAdd) {
   return `${newHours}:${String(newMinutes).padStart(2, "0")} ${period}`;
 }
 
-
-
 export {
   isRamadan,
   getTodaySchedule,
   getNextPrayer,
   getClosestSchedule,
-  adjustTime
+  adjustTime,
 };
