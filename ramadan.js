@@ -1,4 +1,3 @@
-import fetch from "node-fetch";
 import { saveCache, getCache } from "./ramadan-cache.js";
 
 // Cache object to store API responses
@@ -10,10 +9,10 @@ const cache = getCache();
  * @param {string} country - Name of the country.
  * @returns {Promise<boolean>} - Resolves to true if the date is during Ramadan, false otherwise.
  */
-export async function isRamadan(date, city, country) {
+export async function isRamadan(date, city="Dhaka", country="BD") {
     // Validate date format
     if (!/^\d{2}-\d{2}-\d{4}$/.test(date)) {
-        throw new Error("Invalid date format. Use DD-MM-YYYY.");
+        throw new Error(`Invalid date format. Use DD-MM-YYYY. Provided: ${date}`);
     }
 
     // Extract month and year for API request
@@ -51,6 +50,7 @@ export async function isRamadan(date, city, country) {
 
         // Cache the result
         cache[cacheKey] = isRamadan;
+        console.log("saving cache");
         saveCache(cache);
 
         return isRamadan;

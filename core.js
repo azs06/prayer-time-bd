@@ -1,5 +1,5 @@
 import { schedule } from "./calendar.js";
-import { adjustTime, getClosestSchedule } from "./util.js";
+import { adjustTime, getClosestSchedule,formatDate } from "./util.js";
 import { isRamadan } from "./ramadan.js";
 
 schedule.year = new Date().getFullYear();
@@ -25,6 +25,6 @@ export const getPrayerTimes = (date, district) => {
   const baseSchedule = getClosestSchedule(schedule, date);
   return {
     ...getAdjustedSchedule(baseSchedule.schedule, adjustments),
-    isRamadan: isRamadan(date, "Dhaka", 'BD'),
+    isRamadan: isRamadan(formatDate(date), "Dhaka", 'BD'),
   }
 };

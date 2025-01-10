@@ -3,11 +3,14 @@ import inquirer from "inquirer";
 import { loadConfig, saveConfig } from "./config.js";
 import { districtData } from "./data.js";
 import { schedule } from "./calendar.js";
-import { isRamadan } from "./util.js";
+import { isRamadan } from "./ramadan.js";
 import { getPrayerTimes } from "./core.js";
-import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
+import { formatDate } from "./util.js";
+import yargs from "yargs";
+import ora from "ora";
 
+const spinner = ora("Loading Prayer Times");
 const y = yargs(hideBin(process.argv));
 
 schedule.year = new Date().getFullYear();
@@ -56,9 +59,10 @@ async function selectDistrict() {
   return district;
 }
 
-function display(date, selectedDistrict, adjustedSchedule) {
+async function display(date, selectedDistrict, adjustedSchedule) {
   // Clear console and display header
   //console.clear();
+  const ramadan = await isRamadan(formatDate(new Date()));
   console.log("\n=================================");
   console.log(`Prayer Schedule for ${date}`);
   console.log(`District: ${selectedDistrict}`);
@@ -74,7 +78,7 @@ function display(date, selectedDistrict, adjustedSchedule) {
   console.log(`Magrib:  ${adjustedSchedule.magrib_iftar}`);
   console.log(`Isha:    ${adjustedSchedule.isha}`);
 
-  if (isRamadan(new Date())) {
+  if (ramadan) {
     console.log("\nRamadan Timings:");
     console.log("---------------------------------");
     console.log(`Sehri Ends: ${adjustedSchedule.sehri}`);
@@ -126,21 +130,22 @@ async function main() {
   if (argv.district) {
     if (validateDistrict(argv.district)) {
       saveConfig({ selectedDistrict: argv.district });
-    } else if(!config.selectedDistrict) {
+    } else if (!config.selectedDistrict) {
       console.log("Invalid district name");
       console.log("Please select a valid district");
       await selectDistrict();
     }
   }
-  
-  let selectedDistrict = loadConfig()?.selectedDistrict || await selectDistrict();
+
+  let selectedDistrict =
+    loadConfig()?.selectedDistrict || (await selectDistrict());
 
   // Get today's schedule and apply adjustments
   const date = argv.date ? new Date(argv.date) : new Date();
   // const baseSchedule = getClosestSchedule(schedule, date);
   const adjustedSchedule = getPrayerTimes(date, selectedDistrict);
 
-  display(date, selectedDistrict, adjustedSchedule);
+  await display(date, selectedDistrict, adjustedSchedule);
 }
 
 // Start the application
