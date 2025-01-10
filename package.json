@@ -12,6 +12,7 @@
   "dependencies": {
     "chalk": "^5.4.1",
     "inquirer": "^12.3.0",
+    "node-fetch": "^3.3.2",
     "ora": "^8.1.1",
     "yargs": "^17.7.2"
   },

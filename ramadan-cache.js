@@ -1,5 +1,5 @@
 import fs from "node:fs";
-const cacheFile = "ramadan-cache.json";
+const cacheFile = "./ramadan-cache.json";
 
 
 // Save cache to file

@@ -62,7 +62,12 @@ async function selectDistrict() {
 async function display(date, selectedDistrict, adjustedSchedule) {
   // Clear console and display header
   //console.clear();
-  const ramadan = await isRamadan(formatDate(new Date()));
+  let ramadan = false;
+  try {
+    ramadan = await isRamadan(formatDate(new Date()));
+  } catch (error) {
+    console.error("Failed to check Ramadan status:", error);
+  }
   console.log("\n=================================");
   console.log(`Prayer Schedule for ${date}`);
   console.log(`District: ${selectedDistrict}`);
