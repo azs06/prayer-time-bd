@@ -67,6 +67,7 @@ async function display(date, selectedDistrict, adjustedSchedule) {
     ramadan = await isRamadan(formatDate(new Date()));
   } catch (error) {
     console.error("Failed to check Ramadan status:", error);
+    throw new Error(error);
   }
   console.log("\n=================================");
   console.log(`Prayer Schedule for ${date}`);
@@ -151,6 +152,7 @@ async function main() {
   const adjustedSchedule = getPrayerTimes(date, selectedDistrict);
 
   await display(date, selectedDistrict, adjustedSchedule);
+  //const ramadan = await isRamadan(formatDate(new Date()));
 }
 
 // Start the application

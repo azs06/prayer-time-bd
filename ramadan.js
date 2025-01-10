@@ -21,7 +21,7 @@ export async function isRamadan(date, city="Dhaka", country="BD") {
     const cacheKey = `${year}-${month}-${day}-${city}-${country}`.toLowerCase();
 
     // Check cache
-    if (typeof cache[cacheKey] !== "undefined" || cache[cacheKey] !== null) {
+    if (typeof cache[cacheKey] !== "undefined") {
         return cache[cacheKey]
     }
 
