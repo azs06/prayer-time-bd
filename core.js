@@ -25,6 +25,6 @@ export const getPrayerTimes = (date, district) => {
   const baseSchedule = getClosestSchedule(schedule, date);
   return {
     ...getAdjustedSchedule(baseSchedule.schedule, adjustments),
-    isRamadan: isRamadan(date, district, 'BD'),
+    isRamadan: isRamadan(date, "Dhaka", 'BD'),
   }
 };
