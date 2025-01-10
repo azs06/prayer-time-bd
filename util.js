@@ -1,26 +1,3 @@
-// Utility functions
-const isRamadan = async (date) => {
-  // Ramadan 2025 dates (example - update with actual dates)
-  const checkDate = new Date(date);
-  const formattedDate = checkDate
-    .toISOString()
-    .split("T")[0]
-    .split("-")
-    .reverse()
-    .join("-");
-  const [day, month, year] = formattedDate.split("-");
-  const apiUrl = `https://api.aladhan.com/v1/currentIslamicMonth`;
-  const response = await fetch(apiUrl);
-  if (!response.ok) {
-    throw new Error(`HTTP error! Status: ${response.status}`);
-  }
-
-  const data = await response.json();
-  // Check if the Hijri month is Ramadan
-  const isRamadan = data.data === 9;
-  return isRamadan;
-};
-
 function getClosestSchedule(schedule, today = new Date()) {
   const currentMonth = today.toLocaleString("default", { month: "long" });
   const currentDate = today.getDate();
@@ -105,7 +82,6 @@ function adjustTime(timeStr, minutesToAdd) {
 }
 
 export {
-  isRamadan,
   getTodaySchedule,
   getNextPrayer,
   getClosestSchedule,
