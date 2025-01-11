@@ -3,11 +3,15 @@ import inquirer from "inquirer";
 import { loadConfig, saveConfig } from "./config.js";
 import { districtData } from "./data.js";
 import { schedule } from "./calendar.js";
-import { isRamadan } from "./util.js";
+import { isRamadan } from "./ramadan.js";
 import { getPrayerTimes } from "./core.js";
-import yargs from "yargs";
 import { hideBin } from "yargs/helpers";
+import { formatDate, validateDate } from "./util.js";
+import { displayTable } from "./display.js";
+import yargs from "yargs";
+import ora from "ora";
 
+const spinner = ora("Loading Prayer Times");
 const y = yargs(hideBin(process.argv));
 
 schedule.year = new Date().getFullYear();
@@ -15,25 +19,6 @@ schedule.year = new Date().getFullYear();
 function validateDistrict(district) {
   const validDistricts = districtData.districts.map((d) => d.name);
   return validDistricts.includes(district);
-}
-
-function validateDate(dateString) {
-  // Check if the string matches the format YYYY-MM-DD
-  const regex = /^\d{4}-\d{2}-\d{2}$/;
-  if (!regex.test(dateString)) {
-    return false; // Doesn't match the format
-  }
-
-  // Parse the string into a Date object
-  const date = new Date(dateString);
-
-  // Check if the date is valid
-  const [year, month, day] = dateString.split("-").map(Number);
-  return (
-    date.getFullYear() === year &&
-    date.getMonth() === month - 1 &&
-    date.getDate() === day
-  );
 }
 
 async function selectDistrict() {
@@ -56,37 +41,14 @@ async function selectDistrict() {
   return district;
 }
 
-function display(date, selectedDistrict, adjustedSchedule) {
-  // Clear console and display header
-  //console.clear();
-  console.log("\n=================================");
-  console.log(`Prayer Schedule for ${date}`);
-  console.log(`District: ${selectedDistrict}`);
-  console.log("=================================\n");
-
-  // Display times
-  console.log("Prayer Times:");
-  console.log("---------------------------------");
-  console.log(`Fazr:    ${adjustedSchedule.fazr}`);
-  console.log(`Sunrise: ${adjustedSchedule.sunrise}`);
-  console.log(`Juhoor:  ${adjustedSchedule.juhoor}`);
-  console.log(`Asr:     ${adjustedSchedule.asr}`);
-  console.log(`Magrib:  ${adjustedSchedule.magrib_iftar}`);
-  console.log(`Isha:    ${adjustedSchedule.isha}`);
-
-  if (isRamadan(new Date())) {
-    console.log("\nRamadan Timings:");
-    console.log("---------------------------------");
-    console.log(`Sehri Ends: ${adjustedSchedule.sehri}`);
-    console.log(`Iftar Time: ${adjustedSchedule.magrib_iftar}`);
-  }
-
-  console.log("\n=================================");
-  console.log("Options:");
-  console.log('1. Press "c" to change district');
-  console.log('2. Press "q" to quit');
-  console.log("=================================\n");
-
+async function display(
+  date,
+  selectedDistrict,
+  adjustedSchedule,
+  ramadan = false
+) {
+  
+  displayTable(date, selectedDistrict, adjustedSchedule, ramadan)
   // Handle user input
   process.stdin.setRawMode(true);
   process.stdin.resume();
@@ -126,21 +88,31 @@ async function main() {
   if (argv.district) {
     if (validateDistrict(argv.district)) {
       saveConfig({ selectedDistrict: argv.district });
-    } else if(!config.selectedDistrict) {
+    } else if (!config.selectedDistrict) {
       console.log("Invalid district name");
       console.log("Please select a valid district");
       await selectDistrict();
     }
   }
-  
-  let selectedDistrict = loadConfig()?.selectedDistrict || await selectDistrict();
 
-  // Get today's schedule and apply adjustments
+  let selectedDistrict =
+    loadConfig()?.selectedDistrict || (await selectDistrict());
+
   const date = argv.date ? new Date(argv.date) : new Date();
-  // const baseSchedule = getClosestSchedule(schedule, date);
   const adjustedSchedule = getPrayerTimes(date, selectedDistrict);
 
-  display(date, selectedDistrict, adjustedSchedule);
+  spinner.start();
+  setTimeout(async () => {
+    let ramadan = false;
+    try {
+      ramadan = await isRamadan(formatDate(new Date()));
+    } catch (error) {
+      console.error("Failed to check Ramadan status:", error);
+      throw new Error(error);
+    }
+    spinner.stop();
+    await display(date, selectedDistrict, adjustedSchedule, ramadan);
+  }, 1000);
 }
 
 // Start the application
