@@ -48,7 +48,7 @@ async function display(
   ramadan = false
 ) {
   
-  displayConsole(date, selectedDistrict, adjustedSchedule, ramadan)
+  displayTable(date, selectedDistrict, adjustedSchedule, ramadan)
   // Handle user input
   process.stdin.setRawMode(true);
   process.stdin.resume();
