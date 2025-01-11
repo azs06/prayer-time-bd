@@ -137,7 +137,7 @@ async function main() {
       throw new Error(error);
     }
     spinner.stop();
-    await display(date, selectedDistrict, adjustedSchedule);
+    await display(date, selectedDistrict, adjustedSchedule, ramadan);
   }, 1000);
 }
 
