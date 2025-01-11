@@ -97,6 +97,25 @@ function formatDate(date) {
   return `${padNumber(day, 2, '0')}-${padNumber(month, 2, '0')}-${year}`;
 }
 
+function validateDate(dateString) {
+  // Check if the string matches the format YYYY-MM-DD
+  const regex = /^\d{4}-\d{2}-\d{2}$/;
+  if (!regex.test(dateString)) {
+    return false; // Doesn't match the format
+  }
+
+  // Parse the string into a Date object
+  const date = new Date(dateString);
+
+  // Check if the date is valid
+  const [year, month, day] = dateString.split("-").map(Number);
+  return (
+    date.getFullYear() === year &&
+    date.getMonth() === month - 1 &&
+    date.getDate() === day
+  );
+}
+
 
 
 export {
@@ -105,4 +124,5 @@ export {
   getClosestSchedule,
   adjustTime,
   formatDate,
+  validateDate,
 };

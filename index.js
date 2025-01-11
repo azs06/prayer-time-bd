@@ -6,7 +6,7 @@ import { schedule } from "./calendar.js";
 import { isRamadan } from "./ramadan.js";
 import { getPrayerTimes } from "./core.js";
 import { hideBin } from "yargs/helpers";
-import { formatDate } from "./util.js";
+import { formatDate, validateDate } from "./util.js";
 import yargs from "yargs";
 import ora from "ora";
 
@@ -18,25 +18,6 @@ schedule.year = new Date().getFullYear();
 function validateDistrict(district) {
   const validDistricts = districtData.districts.map((d) => d.name);
   return validDistricts.includes(district);
-}
-
-function validateDate(dateString) {
-  // Check if the string matches the format YYYY-MM-DD
-  const regex = /^\d{4}-\d{2}-\d{2}$/;
-  if (!regex.test(dateString)) {
-    return false; // Doesn't match the format
-  }
-
-  // Parse the string into a Date object
-  const date = new Date(dateString);
-
-  // Check if the date is valid
-  const [year, month, day] = dateString.split("-").map(Number);
-  return (
-    date.getFullYear() === year &&
-    date.getMonth() === month - 1 &&
-    date.getDate() === day
-  );
 }
 
 async function selectDistrict() {
@@ -59,16 +40,13 @@ async function selectDistrict() {
   return district;
 }
 
-async function display(date, selectedDistrict, adjustedSchedule) {
+async function display(
+  date,
+  selectedDistrict,
+  adjustedSchedule,
+  ramadan = false
+) {
   // Clear console and display header
-  //console.clear();
-  let ramadan = false;
-  try {
-    ramadan = await isRamadan(formatDate(new Date()));
-  } catch (error) {
-    console.error("Failed to check Ramadan status:", error);
-    throw new Error(error);
-  }
   console.log("\n=================================");
   console.log(`Prayer Schedule for ${date}`);
   console.log(`District: ${selectedDistrict}`);
@@ -146,13 +124,21 @@ async function main() {
   let selectedDistrict =
     loadConfig()?.selectedDistrict || (await selectDistrict());
 
-  // Get today's schedule and apply adjustments
   const date = argv.date ? new Date(argv.date) : new Date();
-  // const baseSchedule = getClosestSchedule(schedule, date);
   const adjustedSchedule = getPrayerTimes(date, selectedDistrict);
 
-  await display(date, selectedDistrict, adjustedSchedule);
-  //const ramadan = await isRamadan(formatDate(new Date()));
+  spinner.start();
+  setTimeout(async () => {
+    let ramadan = false;
+    try {
+      ramadan = await isRamadan(formatDate(new Date()));
+    } catch (error) {
+      console.error("Failed to check Ramadan status:", error);
+      throw new Error(error);
+    }
+    spinner.stop();
+    await display(date, selectedDistrict, adjustedSchedule);
+  }, 1000);
 }
 
 // Start the application
