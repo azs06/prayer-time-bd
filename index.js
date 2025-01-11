@@ -7,7 +7,7 @@ import { isRamadan } from "./ramadan.js";
 import { getPrayerTimes } from "./core.js";
 import { hideBin } from "yargs/helpers";
 import { formatDate, validateDate } from "./util.js";
-import { displayTable, displayConsole } from "./display.js";
+import { displayTable } from "./display.js";
 import yargs from "yargs";
 import ora from "ora";
 

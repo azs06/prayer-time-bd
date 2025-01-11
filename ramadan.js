@@ -28,7 +28,6 @@ export async function isRamadan(date, city="Dhaka", country="BD") {
     try {
         // Build API endpoint URL
         const apiUrl = `https://api.aladhan.com/v1/calendarByCity/${year}/${month}?city=${encodeURIComponent(city)}&country=${encodeURIComponent(country)}&method=2`;
-        console.log("MAKING API CALL!!")
         // Fetch data from API
         const response = await fetch(apiUrl);
         if (!response.ok) {
@@ -51,7 +50,6 @@ export async function isRamadan(date, city="Dhaka", country="BD") {
 
         // Cache the result
         cache[cacheKey] = isRamadan;
-        console.log("saving cache");
         saveCache(cache);
 
         return isRamadan;
