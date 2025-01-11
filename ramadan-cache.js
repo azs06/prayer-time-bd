@@ -19,5 +19,3 @@ export function getCache() {
   }
   return cache;
 }
-
-//console.log
