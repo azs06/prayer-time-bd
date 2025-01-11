@@ -2,6 +2,11 @@ import fs from "node:fs";
 const cacheFile = "./ramadan-cache.json";
 
 
+if (!fs.existsSync(cacheFile)) {
+  fs.writeFileSync(cacheFile, "{}");
+}
+
+
 // Save cache to file
 export function saveCache(cache) {
   fs.writeFileSync(cacheFile, JSON.stringify(cache, null, 2));
@@ -14,3 +19,5 @@ export function getCache() {
   }
   return cache;
 }
+
+//console.log
