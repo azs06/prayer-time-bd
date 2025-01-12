@@ -5,7 +5,7 @@ import { districtData, validateDistrict } from "./data/districts/district-data.j
 import { isRamadan } from "./data/ramadan.js";
 import { getPrayerTimes } from "./core/core.js";
 import { hideBin } from "yargs/helpers";
-import { formatDate, validateDate } from "./utils/util.js";
+import { formatDate, validateDate } from "./utils/utils.js";
 import { displayTable } from "./display/index.js";
 import yargs from "yargs";
 import ora from "ora";

@@ -1,5 +1,5 @@
 import { schedule } from "../data/calendar.js";
-import { adjustTime, getClosestSchedule,formatDate } from "../utils/util.js";
+import { adjustTime, getClosestSchedule,formatDate } from "../utils/utils.js";
 import { isRamadan } from "../data/ramadan.js";
 
 schedule.year = new Date().getFullYear();
