@@ -3,7 +3,7 @@ import { adjustTime, getClosestSchedule,formatDate } from "../utils/util.js";
 import { isRamadan } from "../data/ramadan.js";
 
 schedule.year = new Date().getFullYear();
-import { districtData } from "../data/districts/data.js";
+import { districtData } from "../data/districts/district-data.js";
 
 function getDistrictAdjustments(districtName) {
   const district = districtData.districts.find((d) => d.name === districtName);

@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import inquirer from "inquirer";
 import { loadConfig, saveConfig } from "./config/config.js";
-import { districtData, validateDistrict } from "./data/districts/data.js";
+import { districtData, validateDistrict } from "./data/districts/district-data.js";
 import { isRamadan } from "./data/ramadan.js";
 import { getPrayerTimes } from "./core/core.js";
 import { hideBin } from "yargs/helpers";
