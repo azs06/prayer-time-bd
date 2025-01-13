@@ -1,6 +1,6 @@
 {
   "name": "prayer-time-bd",
-  "version": "2.1.0",
+  "version": "2.1.1",
   "description": "",
   "exports": "./index.js",
   "scripts": {
@@ -20,5 +20,8 @@
   "bin": {
     "prayer-time-bd": "index.js"
   },
-  "type": "module"
+  "type": "module",
+  "engines": {
+    "node": ">=18.0.0"
+  }
 }

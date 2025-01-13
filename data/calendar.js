@@ -1,5 +1,5 @@
 // Complete year data structure with all months
-export const schedule = {
+const schedule = {
   months: [
     {
       name: "January",
@@ -783,3 +783,9 @@ export const schedule = {
     },
   ],
 };
+
+schedule.year = new Date().getFullYear();
+
+export {
+  schedule
+}

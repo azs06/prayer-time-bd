@@ -1,9 +1,9 @@
-import { schedule } from "./calendar.js";
-import { adjustTime, getClosestSchedule,formatDate } from "./util.js";
-import { isRamadan } from "./ramadan.js";
+import { schedule } from "../data/calendar.js";
+import { adjustTime, getClosestSchedule,formatDate } from "../utils/utils.js";
+import { isRamadan } from "../data/ramadan.js";
 
 schedule.year = new Date().getFullYear();
-import { districtData } from "./data.js";
+import { districtData } from "../data/districts/district-data.js";
 
 function getDistrictAdjustments(districtName) {
   const district = districtData.districts.find((d) => d.name === districtName);

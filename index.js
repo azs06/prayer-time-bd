@@ -1,25 +1,17 @@
 #!/usr/bin/env node
 import inquirer from "inquirer";
-import { loadConfig, saveConfig } from "./config.js";
-import { districtData } from "./data.js";
-import { schedule } from "./calendar.js";
-import { isRamadan } from "./ramadan.js";
-import { getPrayerTimes } from "./core.js";
+import { loadConfig, saveConfig } from "./config/config.js";
+import { districtData, validateDistrict } from "./data/districts/district-data.js";
+import { isRamadan } from "./data/ramadan.js";
+import { getPrayerTimes } from "./core/core.js";
 import { hideBin } from "yargs/helpers";
-import { formatDate, validateDate } from "./util.js";
-import { displayTable } from "./display.js";
+import { formatDate, validateDate } from "./utils/utils.js";
+import { displayTable } from "./display/index.js";
 import yargs from "yargs";
 import ora from "ora";
 
 const spinner = ora("Loading Prayer Times");
 const y = yargs(hideBin(process.argv));
-
-schedule.year = new Date().getFullYear();
-
-function validateDistrict(district) {
-  const validDistricts = districtData.districts.map((d) => d.name);
-  return validDistricts.includes(district);
-}
 
 async function selectDistrict() {
   const districts = districtData.districts.map((d) => ({
@@ -41,14 +33,7 @@ async function selectDistrict() {
   return district;
 }
 
-async function display(
-  date,
-  selectedDistrict,
-  adjustedSchedule,
-  ramadan = false
-) {
-  
-  displayTable(date, selectedDistrict, adjustedSchedule, ramadan)
+function handleUserInput(selectedDistrict) {
   // Handle user input
   process.stdin.setRawMode(true);
   process.stdin.resume();
@@ -63,6 +48,17 @@ async function display(
   });
 }
 
+async function display(
+  date,
+  selectedDistrict,
+  adjustedSchedule,
+  ramadan = false
+) {
+  displayTable(date, selectedDistrict, adjustedSchedule, ramadan);
+  // Handle user input
+  handleUserInput(selectedDistrict);
+}
+
 async function main() {
   const argv = y
     .option("district", {
@@ -74,6 +70,11 @@ async function main() {
       alias: "t",
       type: "string",
       description: "Specify the date (YYYY-MM-DD)",
+    })
+    .option("ramadan", {
+      alias: "r",
+      type: "boolean",
+      description: "Specify if it is ramadan",
     })
     .help().argv;
 
