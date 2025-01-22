@@ -1,12 +1,16 @@
 #!/usr/bin/env node
 import inquirer from "inquirer";
 import { loadConfig, saveConfig } from "./config/config.js";
-import { districtData, validateDistrict } from "./data/districts/district-data.js";
+import {
+  districtData,
+  validateDistrict,
+} from "./data/districts/district-data.js";
 import { isRamadan } from "./data/ramadan.js";
 import { getPrayerTimes } from "./core/core.js";
 import { hideBin } from "yargs/helpers";
 import { formatDate, validateDate } from "./utils/utils.js";
 import { displayTable } from "./display/index.js";
+import { verifyNodeVersion } from "./src/versionCheck.js";
 import yargs from "yargs";
 import ora from "ora";
 
@@ -60,6 +64,9 @@ async function display(
 }
 
 async function main() {
+  if(!verifyNodeVersion()){
+    return Promise.reject("exiting");
+  }
   const argv = y
     .option("district", {
       alias: "d",
