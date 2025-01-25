@@ -1,6 +1,6 @@
 {
   "name": "prayer-time-bd",
-  "version": "2.2.0",
+  "version": "2.2.1",
   "description": "",
   "exports": "./index.js",
   "scripts": {

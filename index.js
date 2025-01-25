@@ -11,18 +11,18 @@ import { hideBin } from "yargs/helpers";
 import { formatDate, validateDate } from "./utils/utils.js";
 import { displayTable } from "./display/index.js";
 import { verifyNodeVersion } from "./src/versionCheck.js";
+import { schedule } from "./data/calendar.js";
 import yargs from "yargs";
 import ora from "ora";
 
 const spinner = ora("Loading Prayer Times");
 const y = yargs(hideBin(process.argv));
+const districts = districtData.districts.map((d) => ({
+  name: `${d.name}`,
+  value: d.name,
+}));
 
 async function selectDistrict() {
-  const districts = districtData.districts.map((d) => ({
-    name: `${d.name}`,
-    value: d.name,
-  }));
-
   const { district } = await inquirer.prompt([
     {
       type: "list",
@@ -64,7 +64,7 @@ async function display(
 }
 
 async function main() {
-  if(!verifyNodeVersion()){
+  if (!verifyNodeVersion()) {
     return Promise.reject("exiting");
   }
   const argv = y
@@ -126,4 +126,4 @@ async function main() {
 // Start the application
 main().catch(console.error);
 
-export { getPrayerTimes };
+export { getPrayerTimes, districts, isRamadan, schedule as calendar };
