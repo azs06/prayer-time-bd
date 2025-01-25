@@ -123,7 +123,9 @@ async function main() {
   }, 1000);
 }
 
-// Start the application
-main().catch(console.error);
+// Run main function if script is run directly
+if (import.meta.url === `file://${process.argv[1]}`) {
+  main().catch(console.error);
+}
 
 export { getPrayerTimes, districts, isRamadan, schedule as calendar };
