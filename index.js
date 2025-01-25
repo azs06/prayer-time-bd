@@ -22,6 +22,8 @@ const districts = districtData.districts.map((d) => ({
   value: d.name,
 }));
 
+const districtsMap = districtData.districts.map.slice();
+
 async function selectDistrict() {
   const { district } = await inquirer.prompt([
     {
@@ -128,4 +130,4 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   main().catch(console.error);
 }
 
-export { getPrayerTimes, districts, isRamadan, schedule as calendar };
+export { getPrayerTimes, districtsMap as districts, isRamadan, schedule as calendar };
