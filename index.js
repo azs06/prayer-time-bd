@@ -22,7 +22,7 @@ const districts = districtData.districts.map((d) => ({
   value: d.name,
 }));
 
-const districtsMap = districtData.districts.map.slice();
+const districtsMap = districtData.districts.slice();
 
 async function selectDistrict() {
   const { district } = await inquirer.prompt([
