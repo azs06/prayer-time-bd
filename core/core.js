@@ -20,7 +20,7 @@ function getAdjustedSchedule(baseSchedule, adjustments) {
   return adjusted;
 }
 
-export const getPrayerTimes = (date, district) => {
+export const getPrayerTimes = (date = new Date(), district) => {
   const adjustments = getDistrictAdjustments(district);
   const baseSchedule = getClosestSchedule(schedule, date);
   return {
