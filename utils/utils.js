@@ -1,30 +1,31 @@
 function getClosestSchedule(schedule, today = new Date()) {
-    const currentMonth = today.toLocaleString("default", { month: "long" });
-    const currentDate = today.getDate();
-  
-    // Find the current month's data
-    const monthData = schedule.months.find((m) => m.name === currentMonth);
-    if (!monthData) {
-      return null;
+  const currentMonth = today.toLocaleString("default", { month: "long" });
+  const currentDate = today.getDate();
+
+  // Find the current month's data
+  const monthData = schedule.months.find((m) => m.name === currentMonth);
+  if (!monthData) return null;
+
+  // Find the latest schedule entry with date <= currentDate
+  let closestSchedule = null;
+  let maxValidDate = -Infinity;
+
+  for (const daySchedule of monthData.schedule) {
+    const scheduleDate = parseInt(daySchedule.date, 10);
+    if (scheduleDate <= currentDate && scheduleDate > maxValidDate) {
+      maxValidDate = scheduleDate;
+      closestSchedule = daySchedule;
     }
-  
-    // Find the closest date in the schedule
-    let closestSchedule = monthData.schedule[0];
-    let closestDiff = Math.abs(currentDate - parseInt(closestSchedule.date));
-  
-    for (const daySchedule of monthData.schedule) {
-      const diff = Math.abs(currentDate - parseInt(daySchedule.date));
-      if (diff < closestDiff) {
-        closestDiff = diff;
-        closestSchedule = daySchedule;
-      }
-    }
-  
-    return {
-      date: `${currentMonth} ${currentDate}, ${schedule.year}`,
-      schedule: closestSchedule,
-    };
   }
+
+  // Fallback to first entry if none found (shouldn't happen with valid data)
+  if (!closestSchedule) closestSchedule = monthData.schedule[0];
+
+  return {
+    date: `${currentMonth} ${currentDate}, ${schedule.year}`,
+    schedule: closestSchedule,
+  };
+}
   
   const getTodaySchedule = (schedule) => {
     if (!schedule || !schedule.months) return {};
