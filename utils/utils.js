@@ -22,7 +22,7 @@ function getClosestSchedule(schedule, today = new Date()) {
   if (!closestSchedule) closestSchedule = monthData.schedule[0];
 
   return {
-    date: `${currentMonth} ${currentDate}, ${schedule.year}`,
+    date: `${today.toLocaleDateString("en-US")}`,
     schedule: closestSchedule,
   };
 }
