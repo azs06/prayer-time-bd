@@ -1,11 +1,19 @@
 import fs from "node:fs";
-const cacheFile = "./ramadan-cache.json";
+import path from "node:path";
+import os from "node:os";
 
+const cacheDir = path.join(os.homedir(), ".prayer-time-bd");
+const cacheFile = path.join(cacheDir, "ramadan-cache.json");
 
+// Ensure the cache directory exists
+if (!fs.existsSync(cacheDir)) {
+  fs.mkdirSync(cacheDir, { recursive: true });
+}
+
+// Ensure the cache file exists
 if (!fs.existsSync(cacheFile)) {
   fs.writeFileSync(cacheFile, "{}");
 }
-
 
 // Save cache to file
 export function saveCache(cache) {
